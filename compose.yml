@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  cpp-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/workspace
+      - ~/.gitconfig:/root/.gitconfig:ro
+      - ~/.ssh:/root/.ssh:ro
+    tty: true
+    stdin_open: true
+    entrypoint: ["sleep", "infinity"]
