@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build single-producer-consumer",
+      "label": "Build producer-consumer",
       "type": "shell",
-      "command": "cd /workspace/single-producer-consumer && cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build",
+      "command": "cd /workspace/producer-consumer && cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build",
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": []
     }

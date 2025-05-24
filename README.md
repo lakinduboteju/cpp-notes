@@ -3,11 +3,11 @@ C++ Notes and Examples
 
 ## Projects
 
-### Single Producer-Consumer Synchronization Demo
+### Producer-Consumer Synchronization Demo
 
 A comprehensive implementation demonstrating thread synchronization in C++ using the classic producer-consumer problem.
 
-**Location**: `single-producer-consumer/`
+**Location**: `producer-consumer/`
 
 **Key Features**:
 - Thread-safe communication between producer and consumer threads
@@ -27,4 +27,4 @@ A comprehensive implementation demonstrating thread synchronization in C++ using
 - Atomic operations (`std::atomic`)
 - STL containers (`std::queue`)
 
-See the project's [README](single-producer-consumer/README.md) for detailed problem explanation and implementation details.
+See the project's [README](producer-consumer/README.md) for detailed problem explanation and implementation details.

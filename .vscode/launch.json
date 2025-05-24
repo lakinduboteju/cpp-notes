@@ -5,7 +5,27 @@
             "name": "single-producer-consumer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/workspace/single-producer-consumer/build/single-producer-consumer",
+            "program": "/workspace/producer-consumer/build/single-producer-consumer",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "/workspace",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "multi-producer-consumer",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/workspace/producer-consumer/build/multi-producer-consumer",
             "args": [],
             "stopAtEntry": false,
             "cwd": "/workspace",

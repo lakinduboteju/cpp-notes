@@ -34,7 +34,8 @@ public:
         data_.push(item);
         std::cout << "[BUFFER] Added: '" << item << "' (Buffer size: " << data_.size() << ")\n";
         
-        // Notify consumer that new data is available
+        // For multiple consumers: notify_one() is sufficient as only one consumer 
+        // needs to wake up to process the new item
         condition_.notify_one();
     }
     
@@ -50,7 +51,8 @@ public:
             data_.pop();
             std::cout << "[BUFFER] Removed: '" << item << "' (Buffer size: " << data_.size() << ")\n";
             
-            // Notify producer that space is available
+            // For multiple producers: notify_one() is sufficient as only one producer
+            // needs to wake up when space becomes available
             condition_.notify_one();
             return true;
         }
