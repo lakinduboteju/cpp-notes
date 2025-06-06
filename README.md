@@ -45,6 +45,28 @@ A detailed explanation of C++ access specifiers and how they interact with inher
 
 This guide provides essential knowledge for designing robust class hierarchies and understanding C++ access control mechanisms.
 
+### 3. C++ Class Members: `const` and Other Essentials
+
+A comprehensive overview of different types of class members and their behavior, with special focus on `const` correctness.
+
+**Location**: `notes/3_class_members.md`
+
+**Key Topics Covered**:
+- **Const data members**: Initialization requirements and immutability constraints
+- **Const member functions**: Functions that guarantee no object modification
+- **Const objects**: Objects that can only call const member functions
+- **Static members**: Class-level data and functions shared among all instances
+- **Mutable members**: Exception to const rules for implementation details
+
+**Concepts Demonstrated**:
+- Constructor initializer lists for const and reference members
+- Const correctness in class design and API safety
+- Static member definition and usage patterns
+- Mutable keyword for caching and optimization
+- Member initialization order and best practices
+
+This guide is crucial for understanding const correctness, static behavior, and proper class member management in C++.
+
 ---
 
 ## Projects
