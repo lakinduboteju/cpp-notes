@@ -136,6 +136,31 @@ An in-depth exploration of virtual functions, inheritance mechanisms, and runtim
 
 This guide provides deep understanding of C++ polymorphism mechanisms and is crucial for designing extensible object-oriented systems and avoiding common inheritance pitfalls.
 
+### 6. C++ Templates and Generic Programming
+
+A comprehensive exploration of C++ templates, metaprogramming, and modern generic programming techniques.
+
+**Location**: `notes/6_templates.md`
+
+**Key Topics Covered**:
+- **Function templates**: Generic functions with type deduction and specialization
+- **Class templates**: Generic classes with multiple template parameters and defaults
+- **Template metaprogramming**: SFINAE, type traits, and compile-time computation
+- **Variadic templates**: Functions and classes with variable argument lists
+- **Modern features**: C++17 CTAD, C++20 concepts, and template constraints
+
+**Concepts Demonstrated**:
+- Automatic type deduction and template argument deduction rules
+- Template specialization for custom behavior with specific types
+- SFINAE techniques for conditional template instantiation
+- Compile-time programming with `constexpr` and template metaprogramming
+- Variadic templates for flexible, type-safe interfaces
+- C++20 concepts for readable template constraints
+- Common template patterns: CRTP, policy-based design, and template aliases
+- Performance benefits of compile-time polymorphism vs. runtime polymorphism
+
+This guide is essential for mastering generic programming in C++ and understanding how to write efficient, reusable, and type-safe template-based code.
+
 ---
 
 ## Projects
