@@ -4,96 +4,7 @@
 
 - **Encapsulation:** Bundle data and methods operating on that data within a class.
 - **Abstraction:** Hide implementation details and show only essential features (using public APIs, abstract base classes).
-- **Inheritanc### Multiple Inheritance and Diamond Problem
-
-C++ supports multiple inheritance, but it can lead to the **Diamond Problem**.
-
-#### Diamond Problem Example:
-
-```cpp
-class Animal {
-protected:
-    std::string name;
-public:
-    Animal(const std::string& n) : name(n) {}
-    virtual void speak() { std::cout << name << " makes a sound\n"; }
-};
-
-class Mammal : public Animal {
-public:
-    Mammal(const std::string& n) : Animal(n) {}
-    void giveBirth() { std::cout << name << " gives birth\n"; }
-};
-
-class Bird : public Animal {
-public:
-    Bird(const std::string& n) : Animal(n) {}
-    void layEggs() { std::cout << name << " lays eggs\n"; }
-};
-
-// Diamond Problem: Bat inherits from both Mammal and Bird
-// Both inherit from Animal, creating two Animal subobjects
-class Bat : public Mammal, public Bird {
-public:
-    // ERROR: Ambiguous - which Animal constructor?
-    // Bat(const std::string& n) : Mammal(n), Bird(n) {} 
-    
-    // Must specify which path to use
-    Bat(const std::string& n) : Mammal(n), Bird(n) {}
-    
-    void fly() { std::cout << name << " flies\n"; }  // ERROR: Ambiguous name!
-};
-```
-
-#### Problems:
-1. **Ambiguous Access**: `name` exists in two Animal subobjects
-2. **Memory Waste**: Two copies of Animal data
-3. **Inconsistent State**: Two Animal subobjects can have different values
-
-#### Solution: Virtual Inheritance
-
-```cpp
-class Animal {
-protected:
-    std::string name;
-public:
-    Animal(const std::string& n) : name(n) {}
-    virtual void speak() { std::cout << name << " makes a sound\n"; }
-};
-
-// Virtual inheritance ensures only one Animal subobject
-class Mammal : public virtual Animal {
-public:
-    Mammal(const std::string& n) : Animal(n) {}
-    void giveBirth() { std::cout << name << " gives birth\n"; }
-};
-
-class Bird : public virtual Animal {
-public:
-    Bird(const std::string& n) : Animal(n) {}
-    void layEggs() { std::cout << name << " lays eggs\n"; }
-};
-
-class Bat : public Mammal, public Bird {
-public:
-    // Most derived class must call virtual base constructor directly
-    Bat(const std::string& n) : Animal(n), Mammal(n), Bird(n) {}
-    
-    void fly() { std::cout << name << " flies\n"; }  // OK: only one name
-};
-
-// Usage
-Bat bat("Bruce");
-bat.speak();     // OK: calls Animal::speak()
-bat.giveBirth(); // OK: calls Mammal::giveBirth()
-bat.layEggs();   // OK: calls Bird::layEggs()
-bat.fly();       // OK: calls Bat::fly()
-```
-
-#### How Virtual Inheritance Works:
-- Creates only **one shared instance** of the virtual base class
-- **Most derived class** is responsible for initializing the virtual base
-- Slightly more complex object layout and construction, but resolves ambiguity* Derive new classes from existing ones, reusing and extending behavior.
+- **Inheritance:** Derive new classes from existing ones, reusing and extending behavior.
 - **Polymorphism:** The ability to use a single interface to represent different underlying forms (data types). It allows the same code to work with objects of different types, providing a unified way to interact with different implementations. Polymorphism enables "one interface, multiple implementations."
 
 ---
@@ -140,6 +51,7 @@ std::ostream& operator<<(std::ostream& os, const Vec2& v) {
 template<typename T>
 void swap(T& a, T& b) { T tmp = a; a = b; b = tmp; }
 ```
+
 - Chosen at compile time—no runtime overhead.
 
 #### How Template Code Generation Works
@@ -244,6 +156,7 @@ Circle c(5.0);
 ##### What "Dynamic" Means:
 - **Static/Compile-time**: Function call destination known at compile time
 - **Dynamic/Runtime**: Function call destination determined by examining object's actual type at runtime through vtable lookup
+
 - Virtual function mechanism (vtable) enables dynamic dispatch at runtime.
 - **Cost**: One additional pointer dereference per virtual function call.
 - **Benefit**: True polymorphic behavior - same interface, different implementations selected at runtime.
@@ -386,9 +299,96 @@ public:
 };
 ```
 
-### Multiple Inheritance
+### Multiple Inheritance and Diamond Problem
 
-- Supported (danger of “diamond problem” solved via virtual inheritance).
+C++ supports multiple inheritance, but it can lead to the **Diamond Problem**.
+
+#### Diamond Problem Example:
+
+```cpp
+class Animal {
+protected:
+    std::string name;
+public:
+    Animal(const std::string& n) : name(n) {}
+    virtual void speak() { std::cout << name << " makes a sound\n"; }
+};
+
+class Mammal : public Animal {
+public:
+    Mammal(const std::string& n) : Animal(n) {}
+    void giveBirth() { std::cout << name << " gives birth\n"; }
+};
+
+class Bird : public Animal {
+public:
+    Bird(const std::string& n) : Animal(n) {}
+    void layEggs() { std::cout << name << " lays eggs\n"; }
+};
+
+// Diamond Problem: Bat inherits from both Mammal and Bird
+// Both inherit from Animal, creating two Animal subobjects
+class Bat : public Mammal, public Bird {
+public:
+    // ERROR: Ambiguous - which Animal constructor?
+    // Bat(const std::string& n) : Mammal(n), Bird(n) {} 
+    
+    // Must specify which path to use
+    Bat(const std::string& n) : Mammal(n), Bird(n) {}
+    
+    void fly() { std::cout << name << " flies\n"; }  // ERROR: Ambiguous name!
+};
+```
+
+#### Problems:
+1. **Ambiguous Access**: `name` exists in two Animal subobjects
+2. **Memory Waste**: Two copies of Animal data
+3. **Inconsistent State**: Two Animal subobjects can have different values
+
+#### Solution: Virtual Inheritance
+
+```cpp
+class Animal {
+protected:
+    std::string name;
+public:
+    Animal(const std::string& n) : name(n) {}
+    virtual void speak() { std::cout << name << " makes a sound\n"; }
+};
+
+// Virtual inheritance ensures only one Animal subobject
+class Mammal : public virtual Animal {
+public:
+    Mammal(const std::string& n) : Animal(n) {}
+    void giveBirth() { std::cout << name << " gives birth\n"; }
+};
+
+class Bird : public virtual Animal {
+public:
+    Bird(const std::string& n) : Animal(n) {}
+    void layEggs() { std::cout << name << " lays eggs\n"; }
+};
+
+class Bat : public Mammal, public Bird {
+public:
+    // Most derived class must call virtual base constructor directly
+    Bat(const std::string& n) : Animal(n), Mammal(n), Bird(n) {}
+    
+    void fly() { std::cout << name << " flies\n"; }  // OK: only one name
+};
+
+// Usage
+Bat bat("Bruce");
+bat.speak();     // OK: calls Animal::speak()
+bat.giveBirth(); // OK: calls Mammal::giveBirth()
+bat.layEggs();   // OK: calls Bird::layEggs()
+bat.fly();       // OK: calls Bat::fly()
+```
+
+#### How Virtual Inheritance Works:
+- Creates only **one shared instance** of the virtual base class
+- **Most derived class** is responsible for initializing the virtual base
+- Slightly more complex object layout and construction, but resolves ambiguity
 
 ### Access Control and Inheritance Modes
 
