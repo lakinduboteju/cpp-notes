@@ -1,6 +1,31 @@
 # cpp-notes
 C++ Notes and Examples
 
+## Notes
+
+### 1. C++ Class Implementation with Special Member Functions
+
+A comprehensive guide covering C++ class design best practices and resource management.
+
+**Location**: `notes/class.md`
+
+**Key Topics Covered**:
+- **Rule of Five**: Complete implementation of destructor, copy constructor, copy assignment, move constructor, and move assignment
+- **`noexcept` specification**: Enabling efficient move operations in STL containers
+- **Default special member functions**: Understanding when and how the compiler generates special members
+- **Resource management**: Safe handling of memory and other resources in custom classes
+
+**Concepts Demonstrated**:
+- RAII (Resource Acquisition Is Initialization) principles
+- Move semantics for performance optimization
+- Copy vs. move operations and when each is called
+- Explicit defaulting and deletion of special member functions
+- Rule of Zero for simple classes without resource management
+
+This guide is essential for understanding modern C++ class design and avoiding common pitfalls in resource management.
+
+---
+
 ## Projects
 
 ### Producer-Consumer Synchronization Demo
