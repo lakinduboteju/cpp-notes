@@ -112,6 +112,30 @@ A comprehensive guide to modern C++ memory management techniques and the RAII (R
 
 This guide is essential for writing memory-safe C++ code and understanding modern alternatives to manual memory management with `new` and `delete`.
 
+### 5. C++ Virtual Functions and Inheritance Deep Dive
+
+An in-depth exploration of virtual functions, inheritance mechanisms, and runtime polymorphism in C++.
+
+**Location**: `notes/5_virtual_functions.md`
+
+**Key Topics Covered**:
+- **Virtual function mechanism**: vtable implementation and dynamic dispatch
+- **Pure virtual functions**: Abstract classes and interface design patterns
+- **Virtual destructors**: Proper cleanup in polymorphic hierarchies
+- **Multiple inheritance**: Diamond problem and virtual inheritance solutions
+- **Function overriding vs. hiding**: Understanding the differences and best practices
+
+**Concepts Demonstrated**:
+- Runtime polymorphism through virtual tables (vtables)
+- Abstract base classes and pure virtual interfaces
+- Proper destructor chaining in inheritance hierarchies
+- Resolving ambiguity in multiple inheritance with virtual inheritance
+- Modern C++ keywords: `override`, `final`, and their safety benefits
+- Performance considerations and when to use virtual functions
+- Non-virtual interface (NVI) idiom and template method pattern
+
+This guide provides deep understanding of C++ polymorphism mechanisms and is crucial for designing extensible object-oriented systems and avoiding common inheritance pitfalls.
+
 ---
 
 ## Projects
