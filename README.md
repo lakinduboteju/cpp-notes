@@ -7,7 +7,7 @@ C++ Notes and Examples
 
 A comprehensive guide covering C++ class design best practices and resource management.
 
-**Location**: `notes/class.md`
+**Location**: `notes/1_class_design.md`
 
 **Key Topics Covered**:
 - **Rule of Five**: Complete implementation of destructor, copy constructor, copy assignment, move constructor, and move assignment
@@ -23,6 +23,27 @@ A comprehensive guide covering C++ class design best practices and resource mana
 - Rule of Zero for simple classes without resource management
 
 This guide is essential for understanding modern C++ class design and avoiding common pitfalls in resource management.
+
+### 2. C++ Class Member Access Control and Inheritance
+
+A detailed explanation of C++ access specifiers and how they interact with inheritance patterns.
+
+**Location**: `notes/2_class_access.md`
+
+**Key Topics Covered**:
+- **Access specifiers**: `public`, `private`, and `protected` member visibility
+- **Default access levels**: Differences between `struct` and `class` defaults
+- **Inheritance access control**: How inheritance type affects member accessibility
+- **Access modifier combinations**: Understanding the interaction matrix between base and derived class access
+
+**Concepts Demonstrated**:
+- Encapsulation principles and data hiding
+- Protected inheritance for controlled access in derived classes
+- Private inheritance for implementation details
+- Public inheritance for "is-a" relationships
+- Access level preservation and modification through inheritance
+
+This guide provides essential knowledge for designing robust class hierarchies and understanding C++ access control mechanisms.
 
 ---
 
