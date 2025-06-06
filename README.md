@@ -161,6 +161,29 @@ A comprehensive exploration of C++ templates, metaprogramming, and modern generi
 
 This guide is essential for mastering generic programming in C++ and understanding how to write efficient, reusable, and type-safe template-based code.
 
+### 7. C++ OOP Technical Interview Questions
+
+A comprehensive collection of technical interview questions covering core C++ OOP concepts with detailed explanations and code examples.
+
+**Location**: `notes/interview_questions.md`
+
+**Key Topics Covered**:
+- **Core OOP concepts**: Four pillars of OOP with practical examples and comparisons
+- **Virtual functions and inheritance**: Virtual destructors, diamond problem, function overriding vs. hiding
+- **Memory management and RAII**: Smart pointers comparison, RAII principles, and resource management
+- **Class design**: Rule of Five, move semantics, and `noexcept` specifications
+- **Templates and metaprogramming**: SFINAE, template specialization vs. overloading, CRTP pattern
+
+**Concepts Demonstrated**:
+- Real-world problem-solving scenarios commonly asked in technical interviews
+- Detailed explanations of compile-time vs. runtime polymorphism trade-offs
+- Common C++ pitfalls and debugging techniques with prevention strategies
+- Advanced concepts like perfect forwarding, move semantics, and universal references
+- Performance considerations and when to choose different design patterns
+- Best practices for writing robust, maintainable C++ code
+
+This guide serves as an excellent preparation resource for C++ technical interviews and reinforces understanding of advanced OOP concepts through practical question-and-answer format.
+
 ---
 
 ## Projects
