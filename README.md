@@ -89,6 +89,29 @@ A comprehensive overview of different types of class members and their behavior,
 
 This guide is crucial for understanding const correctness, static behavior, and proper class member management in C++.
 
+### 4. C++ Memory Management and RAII
+
+A comprehensive guide to modern C++ memory management techniques and the RAII (Resource Acquisition Is Initialization) principle.
+
+**Location**: `notes/4_memory_management.md`
+
+**Key Topics Covered**:
+- **Stack vs. Heap allocation**: Performance characteristics and appropriate usage patterns
+- **RAII principles**: Automatic resource management through object lifetime binding
+- **Smart pointers**: `std::unique_ptr`, `std::shared_ptr`, and `std::weak_ptr` for automatic memory management
+- **Memory leak prevention**: Common pitfalls and modern C++ solutions
+- **Custom memory management**: Placement new and custom allocators
+
+**Concepts Demonstrated**:
+- Exception-safe resource management through RAII
+- Zero-overhead unique ownership with `unique_ptr`
+- Reference-counted shared ownership with `shared_ptr`
+- Breaking circular references with `weak_ptr`
+- Custom deleters and allocators for specialized use cases
+- Rule of Zero for automatic resource management
+
+This guide is essential for writing memory-safe C++ code and understanding modern alternatives to manual memory management with `new` and `delete`.
+
 ---
 
 ## Projects
