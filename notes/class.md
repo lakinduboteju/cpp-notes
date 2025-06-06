@@ -114,3 +114,34 @@ d = b;                       // Copy assignment
 d = std::move(c);            // Move assignment
 // Destructors called at end of scope
 ```
+
+---
+
+## Delete-First Approach
+
+For resource-managing classes, start by **deleting all special member functions** except the destructor, then enable only what you need:
+
+```cpp
+class ResourceManager {
+    SomeResource* resource;
+
+public:
+    explicit ResourceManager(/* params */) { /* acquire resource */ }
+    ~ResourceManager() { /* cleanup resource */ }
+    
+    // Delete everything by default
+    ResourceManager(const ResourceManager&) = delete;
+    ResourceManager& operator=(const ResourceManager&) = delete;
+    ResourceManager(ResourceManager&&) = delete;
+    ResourceManager& operator=(ResourceManager&&) = delete;
+    
+    // Enable selectively when needed:
+    // ResourceManager(ResourceManager&&) noexcept { /* implement if transferable */ }
+};
+```
+
+**Benefits:**
+- Prevents accidental expensive copies
+- Forces explicit decisions about allowed operations
+- Avoids subtle resource management bugs
+- Makes intent clear and code maintainable
