@@ -3,6 +3,28 @@ C++ Notes and Examples
 
 ## Notes
 
+### 0. C++ Object-Oriented Programming (OOP) Concepts
+
+A foundational guide covering core OOP principles and polymorphism mechanisms in C++.
+
+**Location**: `notes/0_oop.md`
+
+**Key Topics Covered**:
+- **Core OOP principles**: Encapsulation, abstraction, inheritance, and polymorphism
+- **Compile-time polymorphism**: Function overloading, operator overloading, and templates
+- **Runtime polymorphism**: Virtual functions, inheritance, and dynamic dispatch
+- **Template specialization**: Custom behavior for specific types
+- **Universal references**: Perfect forwarding and generic programming
+
+**Concepts Demonstrated**:
+- Static vs. dynamic polymorphism trade-offs
+- Virtual function mechanism and vtable usage
+- Abstract classes and interface design
+- Multiple inheritance and virtual inheritance
+- Template-based generic programming vs. OOP polymorphism
+
+This guide provides the theoretical foundation for understanding C++ object-oriented design patterns and polymorphic behavior.
+
 ### 1. C++ Class Implementation with Special Member Functions
 
 A comprehensive guide covering C++ class design best practices and resource management.
